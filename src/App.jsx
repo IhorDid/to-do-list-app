@@ -24,8 +24,9 @@ function App() {
         <AppBar />
         <TaskInput />
         {loading && !error && <b>Loading, please wait...</b>}
+        {error && <p>Something went wrong, please reload the page.</p>}
         <TaskList />
-        <Toaster />
+        <Toaster position="top-center" />
       </Layout>
     </>
   );

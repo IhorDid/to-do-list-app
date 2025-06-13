@@ -11,7 +11,7 @@ const TaskInput = () => {
     e.preventDefault();
     const form = e.target;
     if (form.elements.text.value.trim() === '') {
-      toast.error('Entry text');
+      toast.error('Please, enter text');
       return;
     }
     dispatch(addTask(form.elements.text.value));
