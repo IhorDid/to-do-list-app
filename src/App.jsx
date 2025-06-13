@@ -7,6 +7,7 @@ import Layout from './components/Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTasks } from './redux/operations';
 import { TaskList } from './components/TaskList/TaskList';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         <TaskInput />
         {loading && !error && <b>Loading, please wait...</b>}
         <TaskList />
+        <Toaster />
       </Layout>
     </>
   );
