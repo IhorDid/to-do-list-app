@@ -1,12 +1,68 @@
-# React + Vite
+# 📝 To-Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Це простий, але функціональний застосунок для керування списком завдань з
+підтримкою темної теми, фільтрації, валідації, повідомлень (toast) і збереження
+стану у localStorage.
 
-Currently, two official plugins are available:
+## 🚀 Як запустити локально
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Склонуй репозиторій або розпакуй архів**
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/your-username/to-do-list-app.git
+cd to-do-list-app
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Встанови залежності**
+
+```bash
+npm install
+```
+
+3. **Запусти застосунок**
+
+```bash
+npm run dev
+```
+
+Застосунок буде доступний за адресою `http://localhost:5173` (Vite).
+
+## 🛠️ Технології та бібліотеки
+
+- **React 19** – побудова інтерфейсу
+- **Redux Toolkit** – глобальний стан задач та фільтрації
+- **react-redux** – інтеграція Redux у React
+- **axios** – запити до Mock API
+- **react-hot-toast** – повідомлення про помилки та дії
+- **next-themes** – керування темною/світлою темою
+- **clsx** – зручна робота з класами
+
+## 🧱 Архітектура
+
+- `/src/components` – окремі UI-компоненти (`TaskItem`, `ThemeToggle`,
+  `FilterStatus` тощо)
+- `/src/redux` – Redux-слайси та асинхронні операції
+- `/src/utils` – допоміжні утиліти (наприклад, toast-нотифікації)
+- `localStorage` – збереження фільтра теми та статусу фільтрації
+
+## ✅ Основні можливості
+
+- Додавання, видалення, редагування задач
+- Перемикання теми (світла/темна)
+- Фільтрація задач (усі / активні / завершені)
+- Валідація порожнього інпуту
+- Toast-повідомлення при помилках API чи недопустимих діях
+
+## 📦 API
+
+Використано **MockAPI.io** як фейковий бекенд. Базова URL зберігається в
+`axios.defaults.baseURL`.
+
+## 🔄 Розробка
+
+Проєкт зібрано на основі **Vite**, з ESLint і Prettier для підтримки чистоти
+коду.
+
+## 📄 Ліцензія
+
+MIT – вільне використання з вказанням авторства.
