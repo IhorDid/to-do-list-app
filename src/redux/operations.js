@@ -14,3 +14,39 @@ export const fetchTasks = createAsyncThunk(
     }
   },
 );
+
+export const addTask = createAsyncThunk(
+  'task/addTask',
+  async (text, thunkAPI) => {
+    try {
+      const response = await axios.post('/task', { text });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  },
+);
+
+export const deleteTask = createAsyncThunk(
+  'tasks/deleteTask',
+  async (taskId, thunkAPI) => {
+    try {
+      const response = await axios.delete(`/task/${taskId}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  },
+);
+
+export const updateTask = createAsyncThunk(
+  'tasks/updateTask',
+  async ({ id, newData }, thunkAPI) => {
+    try {
+      const response = await axios.put(`/task/${id}`, newData);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  },
+);
