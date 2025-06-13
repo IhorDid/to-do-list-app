@@ -6,7 +6,7 @@
   font: inherit;
   cursor: pointer;
   background-color: #e2e5e8;
-  color: inherit;
+  color: var(--button-text);
 }
 .btn.isSelected {
   background-color: #1976d2;

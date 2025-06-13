@@ -1,11 +1,14 @@
 import { useTheme } from 'next-themes';
+import css from './ThemeToggle.module.css';
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
 
+  const nextTheme = theme === 'light' ? 'dark' : 'light';
+
   return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      Switch to {theme === 'light' ? 'dark' : 'light'} mode
+    <button className={css.button} onClick={() => setTheme(nextTheme)}>
+      {nextTheme === 'dark' ? '🌙 Dark mode' : '☀️ Light mode'}
     </button>
   );
 };

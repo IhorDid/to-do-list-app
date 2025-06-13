@@ -7,9 +7,11 @@ const AppBar = () => {
   return (
     <header>
       <section>
-        <h2 className={css.title}>Filter Tasks</h2>
+        <div className={css.wrapper}>
+          <h2 className={css.title}>Filter Tasks</h2>
+          <ThemeToggle />
+        </div>
         <FilterStatus />
-        <ThemeToggle />
       </section>
     </header>
   );
